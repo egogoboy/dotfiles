@@ -9,5 +9,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ## Aerospace
 
 ```sh
+# install aerospace
 brew install --cask nikitabobko/tap/aerospace
+
+# install windows border
+brew tap FelixKratz/formulae
+brew install borders
 ```
