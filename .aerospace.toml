@@ -9,7 +9,7 @@ config-version = 2
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 
 after-startup-command = [
-  'exec-and-forget borders active_color=0xff000087 inactive_color=0x00000000 width=5.0'
+  'exec-and-forget borders active_color=0xff81A1C1 inactive_color=0x00000000 width=5.0'
 ]
 
 # Start AeroSpace at login
@@ -71,12 +71,12 @@ on-mode-changed = []
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 10
-    inner.vertical =   10
-    outer.left =       10
-    outer.bottom =     10
-    outer.top =        10
-    outer.right =      10
+    inner.horizontal = 13
+    inner.vertical =   13
+    outer.left =       13
+    outer.bottom =     13
+    outer.top =        13
+    outer.right =      13
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
