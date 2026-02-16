@@ -4,7 +4,9 @@ adjust-cell-width       = 1
 
 macos-titlebar-style    = hidden
 
-window-padding-x        = 10
-window-padding-y        = 10
+window-padding-x        = 13
+window-padding-y        = 13
 
-theme                   = Nord
+theme                   = Nordic Default
+
+background = #1E1E1E
