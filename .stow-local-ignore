@@ -25,3 +25,5 @@ _darcs
 ^/readme.*
 ^/LICENSE.*
 ^/COPYING
+
+^/.DS_Store
