@@ -1,4 +1,6 @@
 font-size               = 12
+font-thicken            = true
+font-feature            = -calt
 
 adjust-cell-width       = 1
 
@@ -10,3 +12,6 @@ window-padding-y        = 13
 theme                   = Nordic Default
 
 background = #1E1E1E
+
+macos-icon              = custom
+macos-custom-icon       = "~/.assets/ghostty_icon.png"
