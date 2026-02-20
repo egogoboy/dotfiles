@@ -1,3 +1,9 @@
 return {
-    'windwp/nvim-autopairs'
+    'windwp/nvim-autopairs',
+    config = function()
+        require('nvim-autopairs').setup {
+          enable_check_bracket_line = false,
+          map_cr = false
+        }
+    end,
 }

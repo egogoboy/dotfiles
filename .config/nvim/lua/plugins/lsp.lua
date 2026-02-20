@@ -20,20 +20,15 @@ return {
             "neovim/nvim-lspconfig",
         },
     },
+
     {
         "neovim/nvim-lspconfig",
         event = "BufReadPre"
     },
+
     {
         'mfussenegger/nvim-jdtls',
         ft = { 'java' },
     },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-        main = "nvim-treesitter.configs",
-        config = function()
-            require('config.treesitter')
-        end,
-    },
+
 }

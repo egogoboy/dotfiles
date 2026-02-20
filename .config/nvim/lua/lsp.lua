@@ -21,12 +21,3 @@ local on_attach = function(_, bufnr)
     map("n", "[d", vim.diagnostic.goto_prev, "Previous diagnostic")
     map("n", "]d", vim.diagnostic.goto_next, "Next diagnostic")
 end
-
-local servers = { "clangd", "pyright" }
-
-for _, server in ipairs(servers) do
-    vim.lsp.config[server].setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-    })
-end
