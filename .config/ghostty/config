@@ -11,7 +11,7 @@ window-padding-y        = 13
 
 theme                   = Nordic Default
 
-background = #1E1E1E
+background = #151515
 
 macos-icon              = custom
 macos-custom-icon       = "~/.assets/ghostty_icon.png"
