@@ -4,7 +4,7 @@ if ok_cmp then
     capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 end
 
-local on_attach = function(_, bufnr)
+ON_ATTACH = function(_, bufnr)
     local map = function(mode, lhs, rhs, desc)
         vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true, buffer = bufnr, desc = desc })
     end

@@ -47,11 +47,4 @@ vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { silent = true })
 
 -- // LSP // --
 
-
-vim.api.nvim_create_autocmd("CursorHold", {
-    callback = function()
-        vim.diagnostic.open_float(nil, { focusable = false })
-    end,
-})
-
-vim.o.updatetime = 300 -- 0.3 секунды ожидания
+require("lsp")
