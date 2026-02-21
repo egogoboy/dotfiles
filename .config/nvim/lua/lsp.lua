@@ -21,3 +21,34 @@ ON_ATTACH = function(_, bufnr)
     map("n", "[d", vim.diagnostic.goto_prev, "Previous diagnostic")
     map("n", "]d", vim.diagnostic.goto_next, "Next diagnostic")
 end
+
+local signs = {
+    Error = "ඞ ",
+    Warn  = "ඞ ",
+    Hint  = "ඞ ",
+    Info  = "ඞ ",
+}
+
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, {
+        text = icon,
+        texthl = hl,
+        numhl = hl,
+    })
+end
+
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = "ඞ", -- Use a custom symbol for virtual text
+        -- Customize colors with hl_group
+    },
+    signs = true,
+    update_in_insert = false,
+    severity_sort = true,
+    float = {
+        border = "rounded",
+        source = "always",
+        header = "",
+    },
+})
