@@ -1,5 +1,7 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 local ok_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+
 if ok_cmp then
     capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 end
@@ -22,33 +24,33 @@ ON_ATTACH = function(_, bufnr)
     map("n", "]d", vim.diagnostic.goto_next, "Next diagnostic")
 end
 
-local signs = {
-    Error = "ඞ ",
-    Warn  = "ඞ ",
-    Hint  = "ඞ ",
-    Info  = "ඞ ",
-}
-
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, {
-        text = icon,
-        texthl = hl,
-        numhl = hl,
-    })
-end
+vim.cmd('highlight DiagnosticUnderlineError gui=undercurl guisp=Red')
+vim.cmd('highlight DiagnosticUnderlineWarn gui=undercurl guisp=Orange')
+vim.cmd('highlight DiagnosticUnderlineInfo gui=undercurl guisp=Blue')
+vim.cmd('highlight DiagnosticUnderlineHint gui=undercurl guisp=Green')
 
 vim.diagnostic.config({
-    virtual_text = {
-        prefix = "ඞ", -- Use a custom symbol for virtual text
-        -- Customize colors with hl_group
+
+    underline = true,
+    signs = {
+        active = true,
+        text = {
+            [vim.diagnostic.severity.ERROR] = "ඞ",
+            [vim.diagnostic.severity.WARN]  = "ඞ",
+            [vim.diagnostic.severity.HINT]  = "ඞ",
+            [vim.diagnostic.severity.INFO]  = "ඞ",
+        },
     },
-    signs = true,
-    update_in_insert = false,
-    severity_sort = true,
+    virtual_text = false,
     float = {
-        border = "rounded",
-        source = "always",
-        header = "",
+        border = "single",
+        format = function(diagnostic)
+            return string.format(
+                "%s (%s) [%s]",
+                diagnostic.message,
+                diagnostic.source,
+                diagnostic.code or diagnostic.user_data.lsp.code
+            )
+        end,
     },
 })
