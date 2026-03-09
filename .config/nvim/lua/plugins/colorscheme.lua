@@ -1,4 +1,7 @@
+local vim = vim
+
 return {
+    --[[
     'AlexvZyl/nordic.nvim',
     lazy = false,
     priority = 1000,
@@ -17,5 +20,10 @@ return {
 
         vim.cmd("colorscheme nordic")
     end
-}
+    ]] --
 
+    'folke/tokyonight.nvim',
+    config = function()
+        vim.cmd("colorscheme tokyonight-night")
+    end
+}
