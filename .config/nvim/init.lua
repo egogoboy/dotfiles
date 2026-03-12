@@ -9,6 +9,8 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
 vim.cmd("set relativenumber")
 
+vim.opt.cursorline = true
+
 -- // LAZY NVIM // --
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
