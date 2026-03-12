@@ -1,3 +1,5 @@
+local vim = vim
+
 if vim.g.jdtls_started then
     return
 end
@@ -74,6 +76,10 @@ local config = {
     }
 }
 
+-- vim.lsp.enable('jdtls')
+
+-- vim.lsp.config('jdtls', config)
 require('lspconfig').jdtls.setup(config)
+
 
 vim.g.jdtls_started = true

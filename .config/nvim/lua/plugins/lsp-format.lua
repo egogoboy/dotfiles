@@ -1,7 +1,8 @@
+local vim = vim
+
 return {
     "lukas-reineke/lsp-format.nvim",
     config = function()
-
         require("lsp-format").setup {}
 
         vim.api.nvim_create_autocmd('LspAttach', {

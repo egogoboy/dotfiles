@@ -1,3 +1,5 @@
+local vim = vim
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local ok_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
