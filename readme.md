@@ -20,5 +20,4 @@ brew install --cask nikitabobko/tap/aerospace
 
 # install windows border
 brew tap FelixKratz/formulae
-brew install borders
 ```
