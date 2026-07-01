@@ -1,29 +1,28 @@
-local vim = vim
-
 return {
-    --[[
-    'AlexvZyl/nordic.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-        require('nordic').setup({
-            transparent = {
-                bg = true,
-            },
-            visual = {
-                theme = 'light',
-            },
-            on_palette = function(palette)
-                palette.black0 = "#1E1E1E"
-            end,
-        })
+    {
+        "navarasu/onedark.nvim",
+        lazy = false,
+        priority = 1000,
 
-        vim.cmd("colorscheme nordic")
-    end
-    ]] --
+        config = function()
+            require("onedark").setup({
+                style = "dark",
+                transparent = true,
 
-    'folke/tokyonight.nvim',
-    config = function()
-        vim.cmd("colorscheme tokyonight-night")
-    end
+                code_style = {
+                    comments = "italic",
+                    keywords = "bold",
+                    functions = "italic",
+                    strings = "none",
+                    variables = "italic",
+                },
+
+                lualine = {
+                    transparent = true,
+                },
+            })
+
+            require("onedark").load()
+        end,
+    },
 }

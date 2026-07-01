@@ -39,8 +39,7 @@ vim.g.maplocalleader = " "
 require("lazy").setup({
     spec = {
         { import = "plugins" },
-    },
-    install = { colorscheme = { "nordic" } },
+    }
 })
 
 -- // NEO-TREE MAPPING // --
@@ -50,3 +49,33 @@ vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { silent = true })
 -- // LSP // --
 
 require("lsp")
+
+local function update_theme()
+    local appearance = vim.fn.system(
+        "defaults read -g AppleInterfaceStyle 2>/dev/null"
+    )
+
+    local style = appearance:match("Dark")
+        and "dark"
+        or "light"
+
+    if vim.g.current_theme ~= style then
+        vim.g.current_theme = style
+
+        require("onedark").setup({
+            style = style,
+        })
+
+        require("onedark").load()
+    end
+end
+
+update_theme()
+
+vim.fn.timer_start(
+    5000,
+    function()
+        update_theme()
+    end,
+    { ["repeat"] = -1 }
+)
