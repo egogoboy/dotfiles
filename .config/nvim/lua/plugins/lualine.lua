@@ -4,8 +4,9 @@ return {
     config = function()
         require('lualine').setup {
             options = {
-                component_separators = { left = '', right = '' },
-                section_separators = { left = '', right = '' },
+                theme = 'auto',
+                component_separators = '',
+                section_separators = { left = '', right = '' },
                 always_divide_middle = false,
                 always_show_tabline = true,
                 globalstatus = false,
@@ -29,12 +30,12 @@ return {
                 }
             },
             sections = {
-                lualine_a = { 'mode' },
+                lualine_a = { { 'mode', separator = { left = '', right = '' }, padding = { left = 1, right = 1 } } },
                 lualine_b = { 'branch', 'diff', 'diagnostics' },
                 lualine_c = { 'filename' },
-                lualine_x = { 'encoding', 'filetype' },
+                lualine_x = { 'filetype' },
                 lualine_y = { 'progress' },
-                lualine_z = { 'location' }
+                lualine_z = { { 'location', separator = { left = '', right = '' }, padding = { left = 1, right = 1 } } }
             },
             inactive_sections = {
                 lualine_c = { 'filename' },
