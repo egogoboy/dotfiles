@@ -33,6 +33,17 @@ return {
             sources = {
                 { name = "nvim_lsp" },
             },
+            window = {
+                completion = {
+                    border = "rounded",
+                    winhighlight = "Normal:CmpNormal,FloatBorder:CmpBorder,CursorLine:CmpCursorLine,Search:None",
+                },
+                documentation = {
+                    border = "rounded",
+                    winhighlight = "Normal:CmpDocNormal,FloatBorder:CmpDocBorder,CursorLine:CmpDocCursorLine",
+                },
+            },
         })
+        vim.api.nvim_set_hl(0, "CmpCursorLine", { link = "PmenuSel" })
     end
 }
