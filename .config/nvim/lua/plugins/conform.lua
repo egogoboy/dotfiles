@@ -8,6 +8,11 @@ return {
                 cpp = { "clangd-format" },
                 python = { "isort" },
             },
+            formatters = {
+                ["clang-format"] = {
+                    prepend_args = { "--style=LLVM" }
+                }
+            },
             format_on_save = function(bufnr)
                 local ignore_filetypes = { "sql", "markdown" }
                 if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
