@@ -13,4 +13,4 @@ theme = dark:Atom One Dark, light:Atom One Light
 #palette = 3=#c98f08
 
 macos-icon              = custom
-macos-custom-icon       = "~/.assets/ghostty_icon.png"
+macos-custom-icon       = "~/.assets/ghostty-icon.png"
